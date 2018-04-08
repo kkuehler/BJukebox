@@ -81,7 +81,7 @@ handle_info({tcp, _Sock, Msg}, {Idle, Sock}) ->
 				"changed: playlist\n" ->
 					gen_tcp:send(Sock, <<"status\n">>),
 					{noreply, {check_stopped, Sock}};
-				"OK MPD 0.19.0\n" ->
+				"OK MPD 0.20.0\n" ->
 					{noreply, {idle, Sock}};
 				_ ->
 					{noreply, {noidle, Sock}}
